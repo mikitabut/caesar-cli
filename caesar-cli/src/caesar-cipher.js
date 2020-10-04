@@ -18,7 +18,7 @@ class CaesarCipher {
   }
 
   decode (stringForDecoding = '', step = 0) {
-    return this.encode(stringForDecoding, step);
+    return this.encode(stringForDecoding, -1 * step);
   }
 
   _getAlphabetRanges(charCode) {

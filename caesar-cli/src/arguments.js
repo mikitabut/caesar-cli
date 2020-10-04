@@ -1,6 +1,6 @@
 const fs = require('fs');
 
-class Arguments {
+class CipherCliArguments {
   availableActions = ['encode', 'decode'];
   consoleStreams = {
     stdin: 'stdin',
@@ -9,6 +9,22 @@ class Arguments {
 
   constructor(argv) {
     this.argv = argv;
+  }
+
+  getInput() {
+    return this.argv.input;
+  }
+
+  getOutput() {
+    return this.argv.output;
+  }
+
+  getAction() {
+    return this.argv.action;
+  }
+
+  getShift() {
+    return this.argv.shift;
   }
 
   validate() {
@@ -21,6 +37,14 @@ class Arguments {
     if (!validation) {
       process.exit(1);
     }
+  }
+
+  isFromConsole() {
+    return this.argv.input === this.consoleStreams.stdin;
+  }
+
+  isToConsole() {
+    return this.argv.output === this.consoleStreams.stdout;
   }
 
   _validateShift() {
@@ -86,4 +110,4 @@ class Arguments {
   }
 }
 
-module.exports = Arguments;
+module.exports = CipherCliArguments;
