@@ -11,7 +11,7 @@ In next step you should type some of the required and non-reuired arguments whic
 ## Arguments
 1. (**REQUIRED**) `--action ACTION_NAME` - action what you want to do.
 Available values for `ACTION_NAME`: `encode`, `decode`.
-2. (**REQUIRED**) `--shift NUMBER` - shift for the alghoritm. You can use any number.
+2. (**REQUIRED**) `--shift NUMBER` - shift for the alghoritm. You can use any number. For negative numbers use next pattern - `--shift=NEGATIVE_NUMBER`
 3. `--input FILENAME_WITH_PATH` - name as path of the input file. In case when the file with such name will not exist you will see error message. By default console as input is using.
 4. `--output FILENAME_WITH_PATH` - name as path of the input file. In case when the file with such name will not exist you will see error message. By default console as output is using.
 
@@ -31,5 +31,5 @@ node caesar-cli.js --action encode --shift 1 --input input.txt --output output.t
 node caesar-cli.js --action decode --shift 5 --input input.txt
 ```
 ```
-node caesar-cli.js -a encode -s 1 -i input.txt -o output.txt
+node caesar-cli.js -a encode -s=-1 -i input.txt -o output.txt
 ```
